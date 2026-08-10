@@ -14,7 +14,7 @@ export default function Home() {
         />
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
           <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            NativeLearning
+            Native Learning
           </h1>
           <h2 className="max-w-xs text-lg font-medium leading-7 text-gray-500 dark:text-gray-400">
             This project was created by someone who wants to transform
