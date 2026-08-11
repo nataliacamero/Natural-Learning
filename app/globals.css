@@ -144,6 +144,17 @@ a:focus-visible {
   text-transform: uppercase;
 }
 
+.site-footer a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--coral);
+  text-underline-offset: 4px;
+}
+
+.site-footer a:hover {
+  color: var(--ink);
+}
+
 .eyebrow {
   color: var(--coral-dark);
   font-size: 0.69rem;
