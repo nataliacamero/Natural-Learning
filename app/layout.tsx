@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NativeLearning — Aprende tecnología sin miedo",
+  title: "NaturalLearning — Aprende tecnología sin miedo",
   description:
     "Una biblioteca tranquila para aprender programación e inteligencia artificial, con explicaciones claras y experimentos pequeños.",
 };

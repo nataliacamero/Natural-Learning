@@ -28,11 +28,11 @@ export default function Home() {
   return (
     <div className="site-shell">
       <header className="site-header">
-        <Link className="brand" href="/" aria-label="NativeLearning, inicio">
+        <Link className="brand" href="/" aria-label="NaturalLearning, inicio">
           <span className="brand-mark" aria-hidden="true">
             NL
           </span>
-          <span>NativeLearning</span>
+          <span>NaturalLearning</span>
         </Link>
 
         <nav className="main-nav" aria-label="Navegación principal">
@@ -52,7 +52,7 @@ export default function Home() {
               La tecnología también puede explicarse <em>despacio.</em>
             </h1>
             <p className="hero-intro">
-              NativeLearning ayuda a personas curiosas y principiantes a
+              NaturalLearning ayuda a personas curiosas y principiantes a
               entender programación e inteligencia artificial con explicaciones
               pacientes, experimentos pequeños y proyectos útiles.
             </p>
@@ -164,7 +164,7 @@ export default function Home() {
       </main>
 
       <footer className="site-footer">
-        <span>NativeLearning</span>
+        <span>NaturalLearning</span>
         <span>Aprender tecnología, sin prisa y sin vergüenza.</span>
       </footer>
     </div>
