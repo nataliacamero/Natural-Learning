@@ -2,13 +2,6 @@ import Link from "next/link";
 
 import styles from "./native-preview-home.module.css";
 
-type PreviewVariant = "c" | "d";
-
-type NativePreviewHomeProps = {
-  variant: PreviewVariant;
-  preview?: boolean;
-};
-
 const routes = [
   {
     number: "01",
@@ -30,29 +23,19 @@ const routes = [
   },
 ];
 
-export function NativePreviewHome({
-  variant,
-  preview = true,
-}: NativePreviewHomeProps) {
-  const shellClass = `${styles.shell} ${variant === "c" ? styles.editorial : styles.dashboard}`;
-  const navigation = preview
-    ? [
-        { label: "Inicio actual", href: "/" },
-        { label: "Diseño C", href: "/design-c", variant: "c" as const },
-        { label: "Diseño D", href: "/design-d", variant: "d" as const },
-      ]
-    : [
-        { label: "Rutas", href: "#rutas" },
-        { label: "Ahora", href: "#progreso" },
-      ];
+export function NativePreviewHome() {
+  const navigation = [
+    { label: "Rutas", href: "#rutas" },
+    { label: "Ahora", href: "#progreso" },
+  ];
 
   return (
-    <div className={shellClass}>
+    <div className={`${styles.shell} ${styles.dashboard}`}>
       <header className={styles.header}>
         <Link
           className={styles.brand}
           href="/"
-          aria-label="NaturalLearning, inicio"
+          aria-label="Natural Learning, inicio"
         >
           <span className={styles.brandMark} aria-hidden="true">
             N L
@@ -62,36 +45,24 @@ export function NativePreviewHome({
 
         <nav
           className={styles.nav}
-          aria-label={
-            preview ? "Navegación de la exploración" : "Navegación principal"
-          }
+          aria-label="Navegación principal"
         >
           {navigation.map((item) => (
             <Link
-              className={item.variant === variant ? styles.current : undefined}
               href={item.href}
               key={item.label}
-              aria-current={item.variant === variant ? "page" : undefined}
             >
               {item.label}
             </Link>
           ))}
+          {process.env.NODE_ENV === "development" && (
+            <Link href="/recordatorio">Recordatorio</Link>
+          )}
           <a className={styles.navStart} href="#empieza">
             Empieza aquí <span aria-hidden="true">↓</span>
           </a>
         </nav>
       </header>
-
-      {preview && (
-        <div
-          className={styles.edition}
-          aria-label="Exploración visual del Sprint 003"
-        >
-          <span>Exploración visual</span>
-          <span aria-hidden="true">/</span>
-          <span>Sprint 003</span>
-        </div>
-      )}
 
       <main>
         <section className={styles.hero} aria-labelledby="preview-hero-title">
@@ -196,6 +167,14 @@ export function NativePreviewHome({
                 <span className={styles.activityTime}>10 min</span>
               </div>
               <h3>¿Puede una IA sonar segura y estar equivocada?</h3>
+              <Link
+                className={styles.activityResource}
+                href="/ia-sin-humo/que-es-un-llm"
+              >
+                <span>Primer recurso</span>
+                <strong>¿Qué es un LLM?</strong>
+                <em>En desarrollo →</em>
+              </Link>
               <ol>
                 <li>Escribe a una IA una pregunta sobre algo que conozcas.</li>
                 <li>Lee la respuesta y marca una frase que comprobarías.</li>

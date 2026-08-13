@@ -1,0 +1,669 @@
+.shell {
+  --background: #f1f8fc;
+  --surface: #ffffff;
+  --ink: #17324b;
+  --muted: #486276;
+  --line: #c9dce7;
+  --cyan: #006b78;
+  --cyan-soft: #bfe9ee;
+  --lavender-soft: #e7e2f5;
+  --focus: #4f397f;
+  background: var(--background);
+  color: var(--ink);
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+.shell *,
+.shell *::before,
+.shell *::after {
+  box-sizing: border-box;
+}
+
+.shell a {
+  color: inherit;
+}
+
+.shell a:focus-visible,
+.shell button:focus-visible,
+.shell input:focus-visible {
+  border-radius: 6px;
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.header,
+.intro,
+.knowledge,
+.routes,
+.mission,
+.start,
+.footer {
+  margin-inline: auto;
+  width: min(1160px, calc(100% - 48px));
+}
+
+.header {
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  min-height: 78px;
+}
+
+.brand {
+  align-items: center;
+  display: inline-flex;
+  font-size: 1.125rem;
+  font-weight: 760;
+  gap: 10px;
+  letter-spacing: -0.035em;
+  text-decoration: none;
+}
+
+.brandMark {
+  align-items: center;
+  background: var(--ink);
+  border-radius: 11px;
+  color: white;
+  display: inline-flex;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  height: 31px;
+  justify-content: center;
+  letter-spacing: -0.1em;
+  width: 31px;
+}
+
+.nav {
+  align-items: center;
+  display: flex;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.75rem;
+  gap: 24px;
+  text-transform: uppercase;
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+.nav a:first-child {
+  color: var(--muted);
+}
+
+.current {
+  border-bottom: 2px solid var(--cyan);
+  font-weight: 750;
+  padding-bottom: 5px;
+}
+
+.intro {
+  align-items: end;
+  display: grid;
+  gap: 64px;
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 0.55fr);
+  padding: 74px 0 86px;
+}
+
+.eyebrow,
+.meta,
+.sectionLabel,
+.routeNumber,
+.weekNumber,
+.progress,
+.footer {
+  font-family: var(--font-geist-mono), monospace;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  color: var(--cyan);
+  font-size: 0.75rem;
+  font-weight: 750;
+  margin: 0 0 20px;
+}
+
+.intro h1,
+.knowledge h2,
+.sectionHeading h2,
+.mission h2,
+.start h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -0.065em;
+  line-height: 0.98;
+  margin: 0;
+}
+
+.intro h1 {
+  font-size: clamp(3.4rem, 7vw, 6rem);
+  max-width: 760px;
+}
+
+.lead,
+.knowledge p,
+.missionIntro,
+.start li,
+.tomorrow input {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.lead {
+  margin: 27px 0 0;
+  max-width: 620px;
+}
+
+.now {
+  background: var(--ink);
+  box-shadow: 11px 12px 0 var(--cyan-soft);
+  color: #f7fbfa;
+  padding: 28px;
+}
+
+.meta {
+  color: #a8e1e1;
+  font-size: 0.75rem;
+  font-weight: 750;
+  margin: 0 0 28px;
+}
+
+.nowAction {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.55rem;
+  line-height: 1.12;
+  margin: 0;
+}
+
+.knowledge,
+.routes,
+.mission,
+.start {
+  border-top: 1px solid var(--line);
+  padding: 68px 0 86px;
+}
+
+.knowledge {
+  display: grid;
+  gap: 44px;
+  grid-template-columns: 130px minmax(0, 1fr);
+}
+
+.sectionLabel {
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+  gap: 8px;
+}
+
+.sectionLabel span:first-child {
+  color: var(--cyan);
+  font-size: 1rem;
+  font-weight: 750;
+}
+
+.knowledge h2,
+.sectionHeading h2,
+.start h2 {
+  font-size: clamp(2.7rem, 5vw, 4.75rem);
+}
+
+.knowledge p {
+  margin: 24px 0 0;
+  max-width: 700px;
+}
+
+.factorySteps {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 0 18px;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 34px;
+}
+
+.factorySteps div {
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+  padding: 17px 0;
+}
+
+.factorySteps strong {
+  font-size: 1rem;
+}
+
+.factorySteps span {
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.sectionHeading {
+  margin-bottom: 42px;
+}
+
+.routeGrid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.route {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--cyan);
+  min-height: 230px;
+  padding: 24px;
+}
+
+.route:nth-child(2) {
+  border-top-color: #6655a0;
+}
+
+.route:nth-child(3) {
+  border-top-color: #6b9b89;
+}
+
+.routeNumber,
+.weekNumber,
+.progress {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.route h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  margin: 58px 0 13px;
+}
+
+.route p {
+  font-size: 1rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.mission {
+  background: var(--lavender-soft);
+  border: 1px solid var(--line);
+  padding: 38px;
+}
+
+.missionHeader {
+  align-items: end;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+}
+
+.mission h2 {
+  font-size: clamp(2.3rem, 4vw, 4rem);
+  max-width: 720px;
+}
+
+.progress {
+  flex: 0 0 auto;
+  margin: 0 0 4px;
+}
+
+.missionIntro {
+  margin: 22px 0 30px;
+  max-width: 680px;
+}
+
+.checklist {
+  border-top: 1px solid var(--line);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.checklist li {
+  border-bottom: 1px solid var(--line);
+  min-width: 0;
+}
+
+.checklist label {
+  align-items: center;
+  cursor: pointer;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 24px 100px minmax(0, 1fr);
+  min-height: 60px;
+  padding: 9px 0;
+}
+
+.checklist input[type="checkbox"] {
+  accent-color: var(--cyan);
+  height: 22px;
+  margin: 0;
+  width: 22px;
+}
+
+.checklist li.done label > span:last-child {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.missionActions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: space-between;
+  margin-top: 28px;
+}
+
+.fileActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.reset,
+.secondary {
+  border: 2px solid var(--ink);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 750;
+  min-height: 44px;
+  padding: 10px 14px;
+}
+
+.reset {
+  background: var(--ink);
+  color: white;
+}
+
+.secondary {
+  align-items: center;
+  background: transparent;
+  color: var(--ink);
+}
+
+.secondary:hover,
+.reset:hover {
+  background: var(--cyan);
+  border-color: var(--cyan);
+  color: white;
+}
+
+.secondary input {
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}
+
+.secondary:has(input:focus-visible) {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.status {
+  color: var(--muted);
+  font-size: 0.875rem;
+  min-height: 1.4em;
+  margin: 14px 0 0;
+}
+
+.start {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+}
+
+.start ol {
+  border-top: 1px solid var(--line);
+  counter-reset: start;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.start li {
+  border-bottom: 1px solid var(--line);
+  counter-increment: start;
+  display: flex;
+  gap: 16px;
+  padding: 14px 0;
+}
+
+.start li::before {
+  color: var(--cyan);
+  content: counter(start, decimal-leading-zero);
+  flex: 0 0 auto;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.75rem;
+  font-weight: 750;
+}
+
+.tomorrow {
+  grid-column: 2;
+}
+
+.tomorrow span {
+  display: block;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.055em;
+  margin-bottom: 10px;
+}
+
+.tomorrow input {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  color: var(--ink);
+  padding: 14px;
+  width: 100%;
+}
+
+.tomorrow input::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+
+.footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  display: flex;
+  font-size: 0.75rem;
+  gap: 24px;
+  justify-content: space-between;
+  padding: 24px 0 30px;
+}
+
+.footer a {
+  color: var(--ink);
+  font-weight: 750;
+}
+
+@media (max-width: 800px) {
+  .header,
+  .intro,
+  .knowledge,
+  .routes,
+  .mission,
+  .start,
+  .footer {
+    width: min(100% - 40px, 620px);
+  }
+
+  .intro {
+    gap: 44px;
+    grid-template-columns: 1fr;
+  }
+
+  .factorySteps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .routeGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .route {
+    min-height: 180px;
+  }
+
+  .route h3 {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 560px) {
+  .header,
+  .intro,
+  .knowledge,
+  .routes,
+  .mission,
+  .start,
+  .footer {
+    width: calc(100% - 32px);
+  }
+
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+    padding: 16px 0;
+  }
+
+  .nav {
+    gap: 14px;
+    width: 100%;
+  }
+
+  .nav a {
+    min-height: 30px;
+    padding: 6px 0;
+  }
+
+  .intro {
+    padding: 50px 0 62px;
+  }
+
+  .intro h1 {
+    font-size: clamp(3rem, 15vw, 4.1rem);
+  }
+
+  .lead,
+  .knowledge p,
+  .missionIntro,
+  .start li,
+  .tomorrow input,
+  .route p {
+    font-size: 1rem;
+  }
+
+  .now {
+    padding: 24px;
+  }
+
+  .knowledge,
+  .start {
+    display: block;
+    padding: 52px 0 68px;
+  }
+
+  .sectionLabel {
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  .knowledge h2,
+  .sectionHeading h2,
+  .start h2 {
+    font-size: 2.7rem;
+  }
+
+  .factorySteps {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mission,
+  .routes {
+    padding: 52px 20px 68px;
+  }
+
+  .missionHeader {
+    align-items: flex-start;
+    display: block;
+  }
+
+  .mission h2 {
+    font-size: 2.35rem;
+  }
+
+  .progress {
+    margin-top: 20px;
+  }
+
+  .checklist label {
+    align-items: start;
+    gap: 11px;
+    grid-template-columns: 24px minmax(0, 1fr);
+    padding: 13px 0;
+  }
+
+  .weekNumber {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .checklist label > span:last-child {
+    grid-column: 2;
+    grid-row: 2;
+    line-height: 1.45;
+  }
+
+  .missionActions,
+  .fileActions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .reset,
+  .secondary {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .start ol {
+    margin-top: 30px;
+  }
+
+  .tomorrow {
+    display: block;
+    margin-top: 30px;
+  }
+
+  .footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    line-height: 1.5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shell * {
+    scroll-behavior: auto;
+  }
+}

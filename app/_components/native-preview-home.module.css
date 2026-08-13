@@ -585,6 +585,44 @@
   max-width: 280px;
 }
 
+.activityResource {
+  align-items: center;
+  background: #e7f4f8;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  color: var(--ink);
+  display: grid;
+  gap: 0.25rem;
+  margin: 0 0 1.5rem;
+  padding: 1rem 1.25rem;
+  text-decoration: none;
+}
+
+.activityResource span,
+.activityResource em {
+  color: var(--cyan);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.activityResource strong {
+  font-size: 1.125rem;
+}
+
+.activityResource:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 0.5rem 1rem rgba(76, 111, 135, 0.1);
+}
+
+.activityResource:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+}
+
 .routeArrow {
   bottom: 18px;
   color: var(--lavender);
@@ -618,28 +656,7 @@
   text-transform: uppercase;
 }
 
-/* C: una composición de lectura, con una línea editorial y mucho aire. */
-.editorial .hero::after {
-  border-left: 1px solid var(--cyan-soft);
-  content: "";
-  height: 100%;
-  left: 57%;
-  opacity: 0.65;
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-}
-
-.editorial .missionCard {
-  border-radius: 6px 26px 6px 26px;
-  box-shadow: 17px 17px 0 var(--lavender-soft);
-}
-
-.editorial .activityCard {
-  border-radius: 4px 19px 4px 19px;
-}
-
-/* D: el mismo contenido, ordenado como una pequeña mesa de aprendizaje. */
+/* Approved learning-dashboard layout. */
 .dashboard {
   --background: #f1f8fc;
   --cyan: #006b78;
@@ -783,10 +800,6 @@
     padding-bottom: 76px;
   }
 
-  .editorial .hero::after {
-    display: none;
-  }
-
   .heroCopy,
   .dashboard .heroCopy {
     align-self: auto;
@@ -809,7 +822,7 @@
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 563px) {
   .header,
   .edition,
   .hero,
@@ -826,20 +839,23 @@
   }
 
   .nav {
-    display: grid;
-    gap: 11px 8px;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 0;
+    justify-content: space-around;
     width: 100%;
   }
 
   .nav a {
-    font-size: 0.59rem;
-    min-height: 27px;
+    font-size: 0.75rem;
+    min-height: 28px;
+    padding: 6px 8px;
+    text-align: center;
   }
 
   .navStart {
-    grid-column: 1 / -1;
-    justify-self: start;
+    white-space: nowrap;
   }
 
   .edition {
@@ -878,10 +894,6 @@
 
   .missionCard {
     padding: 23px 21px 21px;
-  }
-
-  .editorial .missionCard {
-    box-shadow: 8px 9px 0 var(--lavender-soft);
   }
 
   .topline {
@@ -1101,7 +1113,7 @@
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 563px) {
   .dashboard .hero h1 {
     font-size: var(--font-title-mobile);
   }
