@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { LanguageSelector } from "@/app/_components/language-selector";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -12,6 +13,12 @@ export const metadata: Metadata = {
 export default function WhatIsLlmPage() {
   return (
     <main className={styles.page}>
+      <LanguageSelector
+        locale="es"
+        surface="resource"
+        label="Idioma"
+        activeLabel="actual"
+      />
       <Link className={styles.backLink} href="/">
         ← Volver a Natural Learning
       </Link>
@@ -29,14 +36,52 @@ export default function WhatIsLlmPage() {
         </p>
 
         <section className={styles.statusCard} aria-labelledby="status-title">
+          <div className={styles.illustration} aria-hidden="true">
+            <svg viewBox="0 0 520 260" role="img">
+              <path
+                className={styles.illustrationLine}
+                d="M150 210h220l-24-38H174z"
+              />
+              <path
+                className={styles.illustrationLine}
+                d="M174 172l37 28h99l36-28"
+              />
+              <path
+                className={styles.illustrationLine}
+                d="M210 200v38h100v-38"
+              />
+              <path
+                className={styles.illustrationLine}
+                d="M213 202c-18-32-2-70 30-76 25-5 44 13 39 34-4 17-24 22-38 12"
+              />
+              <path
+                className={styles.illustrationLine}
+                d="M245 172c-10-12-3-30 11-34 13-3 23 7 20 18-2 8-11 11-19 7"
+              />
+              <circle className={styles.illustrationCyan} cx="105" cy="75" r="25" />
+              <circle className={styles.illustrationLine} cx="105" cy="75" r="10" />
+              <path className={styles.illustrationLine} d="M123 93l20 20" />
+              <path
+                className={styles.illustrationLavender}
+                d="M387 58h35v35h-35z"
+              />
+              <path className={styles.illustrationLine} d="M387 58l18 10 17-10M405 68v25" />
+              <path
+                className={styles.illustrationYellow}
+                d="M340 120c0-14 12-25 26-25s26 11 26 25-12 25-26 25-26-11-26-25z"
+              />
+              <path className={styles.illustrationLine} d="M353 120h26M366 107v26" />
+              <path className={styles.illustrationLine} d="M152 45l15-18 15 18" />
+              <path className={styles.illustrationLine} d="M152 45h30" />
+            </svg>
+          </div>
           <p className={styles.statusLabel}>Primer aprendizaje</p>
           <h2 className={styles.sectionTitle} id="status-title">
             Este recurso está en desarrollo.
           </h2>
           <p>
-            La investigación y la lección completa llegarán después. Por ahora,
-            esta página marca el primer tema de la ruta y deja visible el
-            siguiente paso.
+            Estamos en fase de investigación del tema para transformarlo en
+            algo comestible.
           </p>
         </section>
 

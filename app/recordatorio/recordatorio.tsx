@@ -54,6 +54,10 @@ function validChecklist(value: unknown): value is Checklist {
   );
 }
 
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null;
+}
+
 export function Recordatorio() {
   const [checked, setChecked] = useState<Checklist>(emptyChecklist);
   const [hydrated, setHydrated] = useState(false);
@@ -120,9 +124,9 @@ export function Recordatorio() {
       try {
         const parsed: unknown = JSON.parse(String(reader.result));
         if (
-          typeof parsed !== "object" ||
-          parsed === null ||
-          !("checklist" in parsed) ||
+          !isRecord(parsed) ||
+          Object.keys(parsed).length !== 1 ||
+          !Object.prototype.hasOwnProperty.call(parsed, "checklist") ||
           !validChecklist(parsed.checklist)
         ) {
           throw new Error("Formato no válido");

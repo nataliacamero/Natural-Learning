@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { headers } from "next/headers";
 import "./globals.css";
 
+import { localeFromPath } from "@/app/_i18n/content";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -18,10 +20,14 @@ export const metadata: Metadata = {
     "Una biblioteca tranquila para aprender programación e inteligencia artificial, con explicaciones claras y experimentos pequeños.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  const locale = localeFromPath(
+    (await headers()).get("x-natural-learning-locale") ?? undefined,
+  );
+
   return (
     <html
-      lang="es"
+      lang={locale}
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>

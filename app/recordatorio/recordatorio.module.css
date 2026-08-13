@@ -1,13 +1,14 @@
 .shell {
-  --background: #f1f8fc;
-  --surface: #ffffff;
-  --ink: #17324b;
-  --muted: #486276;
-  --line: #c9dce7;
-  --cyan: #006b78;
-  --cyan-soft: #bfe9ee;
-  --lavender-soft: #e7e2f5;
-  --focus: #4f397f;
+  --background: #f4f0e7;
+  --surface: #fbfaf6;
+  --ink: #17324d;
+  --muted: #5c6e7c;
+  --line: #d7d5cc;
+  --coral: #e86d53;
+  --coral-dark: #a64132;
+  --mint: #d9e7ce;
+  --blue-pale: #dce8ee;
+  --focus: #a64132;
   background: var(--background);
   color: var(--ink);
   min-height: 100vh;
@@ -26,7 +27,8 @@
 
 .shell a:focus-visible,
 .shell button:focus-visible,
-.shell input:focus-visible {
+.shell input:focus-visible,
+.shell label:has(input:focus-visible) {
   border-radius: 6px;
   outline: 3px solid var(--focus);
   outline-offset: 3px;
@@ -64,8 +66,8 @@
 .brandMark {
   align-items: center;
   background: var(--ink);
-  border-radius: 11px;
-  color: white;
+  border-radius: 50%;
+  color: var(--surface);
   display: inline-flex;
   font-family: var(--font-geist-mono), monospace;
   font-size: 0.75rem;
@@ -94,7 +96,7 @@
 }
 
 .current {
-  border-bottom: 2px solid var(--cyan);
+  border-bottom: 2px solid var(--coral);
   font-weight: 750;
   padding-bottom: 5px;
 }
@@ -120,7 +122,7 @@
 }
 
 .eyebrow {
-  color: var(--cyan);
+  color: var(--coral-dark);
   font-size: 0.75rem;
   font-weight: 750;
   margin: 0 0 20px;
@@ -160,13 +162,13 @@
 
 .now {
   background: var(--ink);
-  box-shadow: 11px 12px 0 var(--cyan-soft);
+  box-shadow: 11px 12px 0 rgba(232, 109, 83, 0.22);
   color: #f7fbfa;
   padding: 28px;
 }
 
 .meta {
-  color: #a8e1e1;
+  color: #f0c8bd;
   font-size: 0.75rem;
   font-weight: 750;
   margin: 0 0 28px;
@@ -202,7 +204,7 @@
 }
 
 .sectionLabel span:first-child {
-  color: var(--cyan);
+  color: var(--coral-dark);
   font-size: 1rem;
   font-weight: 750;
 }
@@ -256,19 +258,18 @@
 }
 
 .route {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-top: 5px solid var(--cyan);
+  background: #edc0b3;
+  border: 0;
   min-height: 230px;
   padding: 24px;
 }
 
 .route:nth-child(2) {
-  border-top-color: #6655a0;
+  background: var(--blue-pale);
 }
 
 .route:nth-child(3) {
-  border-top-color: #6b9b89;
+  background: var(--mint);
 }
 
 .routeNumber,
@@ -294,8 +295,9 @@
 }
 
 .mission {
-  background: var(--lavender-soft);
+  background: var(--surface);
   border: 1px solid var(--line);
+  border-top: 4px solid var(--coral);
   padding: 38px;
 }
 
@@ -344,7 +346,7 @@
 }
 
 .checklist input[type="checkbox"] {
-  accent-color: var(--cyan);
+  accent-color: var(--coral-dark);
   height: 22px;
   margin: 0;
   width: 22px;
@@ -395,9 +397,9 @@
 
 .secondary:hover,
 .reset:hover {
-  background: var(--cyan);
-  border-color: var(--cyan);
-  color: white;
+  background: var(--coral-dark);
+  border-color: var(--coral-dark);
+  color: var(--surface);
 }
 
 .secondary input {
@@ -411,6 +413,10 @@
 .secondary:has(input:focus-visible) {
   outline: 3px solid var(--focus);
   outline-offset: 3px;
+}
+
+.secondary input:focus-visible {
+  outline: none;
 }
 
 .status {
@@ -443,7 +449,7 @@
 }
 
 .start li::before {
-  color: var(--cyan);
+  color: var(--coral-dark);
   content: counter(start, decimal-leading-zero);
   flex: 0 0 auto;
   font-family: var(--font-geist-mono), monospace;

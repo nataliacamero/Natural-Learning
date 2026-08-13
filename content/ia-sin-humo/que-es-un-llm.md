@@ -25,5 +25,5 @@ La lección seguirá el método de Natural Learning:
 
 ## Siguiente paso
 
-La explicación completa se publicará cuando la investigación, el ejercicio y
-las fuentes estén revisados.
+Estamos en fase de investigación del tema para transformarlo en algo
+comestible.

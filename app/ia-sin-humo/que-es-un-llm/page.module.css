@@ -5,6 +5,10 @@
   padding: 2rem;
 }
 
+.page > .language-selector {
+  max-width: 800px;
+}
+
 .backLink,
 .nextLink {
   color: #17324b;
@@ -74,6 +78,48 @@
 
 .statusCard {
   border-top: 0.375rem solid #006b78;
+}
+
+.illustration {
+  background: #f1f8fc;
+  border-radius: 1rem;
+  margin: -0.5rem -0.5rem 2rem;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.illustration svg {
+  display: block;
+  height: auto;
+  max-height: 16rem;
+  width: 100%;
+}
+
+.illustrationLine {
+  fill: none;
+  stroke: #17324b;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 5;
+}
+
+.illustrationCyan {
+  fill: #bfe9ee;
+  stroke: #17324b;
+  stroke-width: 5;
+}
+
+.illustrationLavender {
+  fill: #e7e2f5;
+  stroke: #17324b;
+  stroke-linejoin: round;
+  stroke-width: 5;
+}
+
+.illustrationYellow {
+  fill: #f1c84b;
+  stroke: #17324b;
+  stroke-width: 5;
 }
 
 .statusLabel {
